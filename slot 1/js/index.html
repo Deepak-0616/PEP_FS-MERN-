@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projrct JS</title>
+</head>
+
+<body>
+    <h1>welcome to Project JS</h1>
+    <script src="operator.js"></script>
+    <script src="concat.js"></script>
+    <script src="typeconversion.js"></script>
+    <script src="inc-dec.js"></script>
+    <script src="non-primitive.js"></script>
+    <script src="conditional.js"></script>
+    <script src="logical.js"></script>
+    <script src="function.js"></script>
+    <!-- <script src="hoisting.js"></script> -->
+     <script src="selfinvoke.js"></script>
+    <script>
+        console.log("internal JavaScript:");
+        console.log("Hello, World!");
+        var name = "deepak";
+        console.log("My name is " + name);
+
+        setTimeout(function () {
+            document.body.style.backgroundColor = "lightpink";
+            document.querySelector("h1").textContent = "Background color changed!";
+        }, 2000);
+        var age = prompt("enter age:");
+        console.log("You entered: " + age);
+        console.log("You are " + age + " years old.");
+        if (age > 18) {
+            alert("You are an adult");
+        }
+        else {
+            alert("You are not an adult.");
+        }
+        document.write("This is written using document.write() method.");
+    </script>
+</body>
+
+</html>

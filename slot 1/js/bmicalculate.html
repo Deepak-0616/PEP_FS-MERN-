@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-black via-gray-700 to-purple-900 flex items-center justify-center min-h-screen">
+
+    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-2xl shadow-2xl w-80 text-center border border-purple-500/30">
+
+        <h1 class="text-3xl font-bold mb-4 text-purple-400">BMI Calculator</h1>
+
+        <input type="number" id="weight" placeholder="Enter weight (kg)"
+            class="w-full p-2 mb-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+        <input type="number" id="height" placeholder="Enter height (m)"
+            class="w-full p-2 mb-4 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+        <button onclick="calculateBMI()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg w-full hover:scale-105 transition">
+            Calculate BMI
+        </button>
+
+        <p id="result" class="mt-4 font-semibold text-lg"></p>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var resultText = document.getElementById("result");
+
+            if (!(weight) || !(height) || weight <= 0 || height <= 0) {
+                resultText.textContent = "Enter valid values!";
+                resultText.className = "mt-4 font-bold text-red-400";
+                return;
+            }
+
+            var bmi = weight / (height * height);
+
+            function getBMICategory(bmi) {
+                if (bmi < 18.5) return "Underweight";
+                else if (bmi < 24.9) return "Normal";
+                else if (bmi < 29.9) return "Overweight";
+                else return "Obesity";
+            }
+
+            let category = getBMICategory(bmi);
+
+            // 💜 Purple-based gradient variations
+            let gradientClass = "";
+
+            if (category === "Underweight")
+                gradientClass = "bg-gradient-to-r from-purple-300 to-indigo-400 text-transparent bg-clip-text";
+
+            else if (category === "Normal")
+                gradientClass = "bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text";
+
+            else if (category === "Overweight")
+                gradientClass = "bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text";
+
+            else
+                gradientClass = "bg-gradient-to-r from-red-500 to-purple-700 text-transparent bg-clip-text";
+
+            resultText.className = "mt-4 font-bold text-xl " + gradientClass;
+            resultText.textContent = `BMI: ${bmi.toFixed(2)} (${category})`;
+        }
+    </script>
+
+</body>
+
+</html>

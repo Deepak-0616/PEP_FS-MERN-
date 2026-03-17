@@ -1,0 +1,11 @@
+console.log("INCREMENT AND DECREMENT OPERATORS:");
+var k = 5;
+var m = k++;
+var n = ++k;
+var o = k--;
+var p = --k;
+console.log(k++);
+console.log(++k);
+console.log(k--);
+console.log(--k);
+console.log(m);
