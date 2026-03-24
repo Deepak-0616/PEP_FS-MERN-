@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+</head>
+<body>
+
+    <h1>🛒 Shopping Cart</h1>
+
+    <div class="container">
+        <input type="text" id="name" placeholder="Item Name">
+        <input type="number" id="price" placeholder="Price">
+
+        <button onclick="addItem()">Add Item</button>
+        <button onclick="showCart()">Show Cart</button>
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <ul id="cartList"></ul>
+
+    <h2 id="total"></h2>
+
+    <script src="func.js"></script>
+</body>
+</html>

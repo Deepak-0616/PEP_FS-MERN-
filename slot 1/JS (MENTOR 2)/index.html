@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body style="text-align: center; padding: 200px;">
+    <form style="text-align: center; padding: 200px;">
+        <input type="button" value="tables" onclick="multiple()">
+                <input type="button" value="even sum" onclick="sum()">
+                                <input type="button" value="array" onclick="array()">
+                                <!-- <input type="button" value="add 5" onclick="add5()"> -->
+                                 <input type="button" value="task 2" onclick="task2()">
+                                 
+
+    </form>
+    <script>
+        function multiple() {
+            var i = 1;
+            let t = prompt("Enter the number");
+            for (i = 1; i <= 10; i++) {
+                document.write(i + " x " + t + " = " + i * t);
+                document.write("<br>");
+
+            }
+        }
+        function sum() {
+            var n = 0;
+            for (i = 0; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    n += i;
+                }
+            }
+            document.write("the sum of even nos " + n);
+        }
+        
+    </script>
+    <script src="array.js"></script>
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+</body>
+
+</html>

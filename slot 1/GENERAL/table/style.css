@@ -1,0 +1,26 @@
+body {
+  margin: 20px;
+  background: linear-gradient(
+    139deg,
+    rgb(234, 122, 122),
+    rgb(121, 222, 121),
+    rgb(138, 138, 239),
+    rgb(239, 239, 129),
+    rgb(239, 129, 129)
+  );
+}
+
+table {
+  width: 90%;
+  height: 90vh;
+  text-align: center;
+  text-shadow: 0 0 0.5em rgb(97, 96, 96);
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th,
+td {
+  border: 7px solid rgb(12, 12, 12);
+}
