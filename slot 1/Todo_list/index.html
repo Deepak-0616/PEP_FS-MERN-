@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Todo</title>
+</head>
+<body>
+
+<h2>Todo App</h2>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+
+let todos = [];
+
+// Add Task
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let taskText = input.value.trim();
+
+    if (taskText === "") {
+        alert("Enter a task");
+        return;
+    }
+
+    let task = {
+        id: Date.now(),
+        text: taskText,
+        completed: false
+    };
+
+    todos.push(task);
+    input.value = "";
+
+    render();
+}
+
+// Delete Task
+function deleteTask(id) {
+    todos = todos.filter(task => task.id !== id);
+    render();
+}
+
+// Toggle Complete
+function toggleTask(id) {
+    todos = todos.map(task => {
+        if (task.id === id) {
+            task.completed = !task.completed;
+        }
+        return task;
+    });
+    render();
+}
+
+// Render UI
+function render() {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    todos.forEach(task => {
+        let li = document.createElement("li");
+
+        let text = document.createElement("span");
+        text.innerText = task.text;
+
+        if (task.completed) {
+            text.style.textDecoration = "line-through";
+        }
+
+        let completeBtn = document.createElement("button");
+        completeBtn.innerText = "✔";
+        completeBtn.onclick = () => toggleTask(task.id);
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "❌";
+        deleteBtn.onclick = () => deleteTask(task.id);
+
+        li.appendChild(text);
+        li.appendChild(completeBtn);
+        li.appendChild(deleteBtn);
+
+        list.appendChild(li);
+    });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,13 +1,6 @@
 body {
   margin: 20px;
-  background: linear-gradient(
-    139deg,
-    rgb(234, 122, 122),
-    rgb(121, 222, 121),
-    rgb(138, 138, 239),
-    rgb(239, 239, 129),
-    rgb(239, 129, 129)
-  );
+  background: linear-gradient( 90deg,  rgb(194, 19, 19),rgb(210, 123, 138),pink,rgb(210, 123, 138) ,rgb(194, 19, 19));
 }
 
 table {
@@ -23,4 +16,18 @@ table {
 th,
 td {
   border: 7px solid rgb(12, 12, 12);
+
+}
+th:hover,td :hover,tr > td:hover {
+  background-color: rgb(166, 163, 163);
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(242, 160, 160);
+
+}
+
+tr:nth-child(even) {
+  background-color: rgb(239, 239, 239);
 }

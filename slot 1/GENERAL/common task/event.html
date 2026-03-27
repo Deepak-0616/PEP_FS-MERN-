@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake on Hover</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+            align-items: center;
+            margin: auto;
+            background:linear-gradient(190deg,green,black,black,black,green);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin-top: 200px;
+        }
+
+        .container {
+
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        h1{
+            color: rgb(18, 199, 18);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .container img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px) rotate(-1deg);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px) rotate(1deg);
+            }
+        }
+
+        .container:hover {
+            animation: shake 0.5s ease-in-out;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div> <h1>Omnitrix</h1></div><br>
+    <div class="container">
+        <img  src="./omnitrix.jpg" height="100px" width="100px">
+    </div>
+
+</body>
+
+</html>

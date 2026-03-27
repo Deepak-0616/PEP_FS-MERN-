@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Data Form</title>
+    <link rel="icon" type="image" href="./ui icon.avif">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c57cc;
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 35px 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.box header {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 30px;
+    outline: none;
+}
+.form-group1 {
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+}
+.gender-group, .education-group {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    margin-top: 5px;
+}
+
+.gender-group label , .education-group label{
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(90deg,#030e3e, #948989,#030e3e);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<header>DATA FORM</header>
+
+<form onsubmit="return validateForm()">
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="name" onblur="check_uname()">
+<p id="uname"></p>
+</div>
+
+<div class="form-group">
+<label>Email ID</label>
+<input type="email" id="email" onblur="check_Email()">
+<p id="uemail"></p>
+</div>
+
+<div class="form-group">
+<label>Age</label>
+<input type="tel" id="age" onblur="check_age()">
+<p id="uage" ></p>
+</div>
+
+<div class="form-group1">
+<label>Gender</label>
+<div class="gender-group">
+<label><input type="radio" name="gender" value="male"> Male</label>
+<label><input type="radio" name="gender" value="female"> Female</label>
+<label><input type="radio" name="gender" value="other"> other</label>
+</div>
+<p id="ugender"></p>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="text" id="phone" >
+<p id="uphone"></p>
+</div>
+
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="date" id="dob">
+</div>
+<div class="form-group">
+<label>Password</label>
+<input type="password" id="password">
+</div>
+
+<div class="form-group1">
+<label>Education</label>
+<div class="education-group">
+<label><input type="checkbox" name="education" value="10th"> 10th</label>
+<label><input type="checkbox" name="education" value="12th"> 12th</label>
+<label><input type="checkbox" name="education" value="UG/PG"> UG/PG</label>
+</div>
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+<script>
+
+// function validateForm() {
+//     let name = document.getElementById("name").value.trim();
+//     let email = document.getElementById("email").value.trim();
+//     let age = document.getElementById("age").value;
+//     let phone = document.getElementById("phone").value.trim();
+//     let password=document.getElementById("password").value;
+//     let gender = document.querySelector('input[name="gender"]:checked');
+//     let education = document.querySelectorAll('input[name="education"]:checked');
+
+//     if(!name)
+//     {
+//         alert("Name not entered");
+//         return false;
+//     }
+//     else if (name.length < 3) {
+//         alert("Name must be at least 3 characters");
+//         return false;
+//     }
+
+//     let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+//      if(!email)
+//      { alert("email not entered");
+//      return false;
+//      }else if (!emailPattern.test(email)) {
+//         alert("Enter valid email");
+//         return false;
+//     }
+//     if(!age)
+//     {
+//         alert("age not entered");
+//         return false;
+//     }
+//     else if (age < 1 || age > 120) {
+//         alert("Enter valid age");
+//         return false;
+//     }
+
+
+//     if (!gender) {
+//         alert("Select gender");
+//         return false;
+//     }
+
+//     let phonePattern = /^[6-9][0-9]{9}$/;
+//     if(!phone)
+//     {
+//         alert("phone no. not enteres");
+//         return false;
+//     }
+//     else if (!phonePattern.test(phone)) {
+//         alert("Enter valid 10-digit phone number");
+//         return false;
+//     }
+//     if(!password)
+//     {
+//         alert("password not entered");
+//         return false;
+//     }
+//     else if(password.length <6){
+//         alert("password must contain atleast 6 characters");
+//         return false;
+//     }
+//     else if (education.length === 0) {
+//         alert("Select at least one education option");
+//         return false;
+//     }
+
+//     alert("Form submitted successfully!");
+//     return true;
+// }
+function check_uname() {
+    let name = document.getElementById("name").value.trim();
+    let uname = document.getElementById("uname");
+
+    uname.innerText = "";
+
+    if (name === "") {
+        uname.innerText = "Name is required";
+        return false;
+    }
+    else if (name.length < 3) {
+        uname.innerText = "Minimum 3 characters required";
+        return false;
+    }
+
+    return true;
+}
+
+function check_Email() {
+    let email = document.getElementById("email").value.trim();
+    let uemail = document.getElementById("uemail");
+
+    uemail.innerText = "";
+
+    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        uemail.innerText = "Email is required";
+        return false;
+    }
+    else if (!re.test(email)) {
+        uemail.innerText = "Invalid email format";
+        return false;
+    }
+
+    return true;
+}
+
+function check_Age() {
+    let age = document.getElementById("age").value;
+    let uage =document.getElementById("uage");
+    uage="";
+    if (age === "")
+    {
+        uage.innerText="age is required"
+    } 
+    else if(age < 1 || age > 120) {
+        uage.innerText="Invalid age";
+        return false;
+    }
+
+    return true;
+}
+
+function check_Gender() {
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let ugender = document.getElementById("ugender")
+    ugender.innerText="";
+    if (!gender) {
+        ugender.innertext="gender is required";
+        return false;
+    }
+
+    return true;
+}
+
+function check_Phone() {
+    let phone = document.getElementById("phone").value.trim();
+    let pattern = /^[6-9][0-9]{9}$/;
+    let uphone = document.getElementById("uphone")
+    uphone.innerText="";
+    if (phone === "")
+    {
+        uphone.innerText="phone no. is required";
+        return false;
+    }
+    else if(!pattern.test(phone)) {
+       uphone.innerText="invalid phone no."
+        return false;
+    }
+
+    return true;
+}
+
+function check_DOB() {
+    let dob = document.getElementById("dob").value;
+
+    if (dob === "") {
+        alert("Select date of birth");
+        return false;
+    }
+
+    return true;
+}
+
+function check_Password() {
+    let password = document.getElementById("password").value;
+
+    if (password === "" || password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    return true;
+}
+
+function check_Education() {
+    let education = document.querySelectorAll('input[name="education"]:checked');
+
+    if (education.length === 0) {
+        alert("Select at least one education option");
+        return false;
+    }
+
+    return true;
+}
+
+function validateForm() {
+    let v1 = check_uname();
+    let v2 = check_Email();
+    let v3 = check_Age();
+    let v4 = check_Gender();
+    let v5 = check_Phone();
+    let v6 = check_DOB();
+    let v7 = check_Password();
+    let v8 = check_Education();
+
+    return v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8;
+}
+</script>
+
+</body>
+</html>

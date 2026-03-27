@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <div ><input type="text" id="inputTime"></div>
+     <div id="display"></div>
+    <script>
+        
+function startCountdown() {
+    let t = document.getElementById("inputTime").value;
+
+    let x = setInterval(function () {
+        if (t <= 0) {
+            clearInterval(x);
+            document.getElementById("display").innerHTML = "Time's up!";
+        } else {
+            document.getElementById("display").innerHTML = t;
+            t--;
+        }
+    }, 1000);
+}
+    </script>
+</body>
+</html>
