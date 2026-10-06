@@ -21,7 +21,7 @@ The following research papers provide the research foundation for the project, c
 ### 3. Estimating the Peak Age of Chess Players Through Statistical and Machine Learning Techniques
 
 **Paper:** Estimating the Peak Age of Chess Players Through Statistical and Machine Learning Techniques  
-**Source:** Nature / Scientific Reports  
+**Source:** Springer 
 **Link:** https://link.springer.com/article/10.1038/s41598-025-10386-3
 
 ---
@@ -29,7 +29,7 @@ The following research papers provide the research foundation for the project, c
 ### 4. Emergent Complexity in the Decision-Making Process of Chess Players
 
 **Paper:** Emergent Complexity in the Decision-Making Process of Chess Players  
-**Source:** Nature / Scientific Reports  
+**Source:** Springer 
 **Link:** https://link.springer.com/article/10.1038/s41598-025-06335-9
 
 ---
