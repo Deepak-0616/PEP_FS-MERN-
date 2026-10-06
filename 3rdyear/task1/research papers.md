@@ -81,19 +81,3 @@ The following research papers provide the research foundation for the project, c
 **Link:** https://ieeexplore.ieee.org/document/11196851
 
 ---
-
-## 🔬 Research Areas
-
-The referenced research covers the following areas:
-
-- ♟️ Chess Blunder Prediction
-- 🧠 Chess Player Decision-Making
-- 📊 Player Performance Analysis
-- 📈 Peak Player Performance
-- 🤖 Chess Engine Development
-- 🧬 Reinforcement Learning & RLHF
-- 🧠 Neural Network Position Evaluation
-- 💬 Human-Like Chess Behavior
-- 🎚️ Dynamic Difficulty Adaptation
-- 👁️ Computer Vision for Chess
-- 🤖 Autonomous Chess Agents
